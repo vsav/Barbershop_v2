@@ -1,0 +1,20 @@
+<h2>Контакты</h2>
+<p>На этой странице вы можете отправить нам сообщение</p>
+
+<div>
+  <%if @sent_message then %>
+    <div class="alert alert-success"><%=@sent_message%></div>
+  <% end %>
+</div>
+
+<form action="/contacts" method="POST" role="form">
+  <div class="form-group">
+    <label>Ваш e-mail</label>
+    <input name="email" type="email" class="form-control" placeholder="name@example.com" value="<%= @email %>" required oninvalid="this.setCustomValidity('Это поле обязательно для заполнения')" oninput="setCustomValidity('')">
+  </div>
+
+  <p>
+    <label for="textarea">Ваше сообщение</label><br>
+    <textarea id="textarea" name="message" class="form-control" rows="15" placeholder="Введите Ваше сообщение..." value="<%= @message %>" required oninvalid="this.setCustomValidity('Это поле обязательно для заполнения')" oninput="setCustomValidity('')"></textarea><br>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+  </p>

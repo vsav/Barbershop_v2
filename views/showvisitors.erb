@@ -1,0 +1,37 @@
+<h2>Visitors:</h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Date/Time</th>
+    <th scope="col">Master</th>
+    <th scope="col">Color</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% @showall.each do |raw| %> <!--TODO-->
+    <tr>
+      <td scope="row"><%=raw['id']%></td>
+      <td scope="row"><%=raw['name']%></td>
+      <td scope="row"><%=raw['phone']%></td>
+      <td scope="row"><%=raw['datestamp']%></td>
+      <td scope="row"><%=raw['master']%></td>
+      <td scope="row" style="background-color: <%=raw['color'] %>"><%=raw['color']%></td>
+  <% end %>
+
+  <!--    <%# @showall.each do |key| %> <!--TODO-->
+    <%# @visitor = key %>
+    <tr>
+      <%# @visitor.each do |x|%>
+        <td scope="row"><%#=x%></td>
+      <%# end %>
+    <%# end %>
+
+
+  </tr>
+  </tbody>
+</table>
